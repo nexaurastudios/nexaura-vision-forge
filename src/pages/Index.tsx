@@ -1,13 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ThemeProvider } from "next-themes";
+import Navigation from "@/components/navigation";
+import HeroSection from "@/components/hero-section";
+import WhyUsSection from "@/components/why-us-section";
+import CapabilitiesSection from "@/components/capabilities-section";
+import ProjectsSection from "@/components/projects-section";
+import ContactSection from "@/components/contact-section";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main>
+          <HeroSection />
+          <WhyUsSection />
+          <CapabilitiesSection />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
